@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Php paigaldusskrip
+
+PHP=$(dpkg-query -W -f='${Status}' apache2 2>/dev/null | grep -c "ok installed")
+
+if [ $PHP -eq 0 ]; then
+
+echo "Paigaladame PHP"
+apt-get install php5 -y libapache2-mod-php5
+elif [ $PHP -eq 1 ]; then
+echo "PHP on paigaldatud!"
+fi
