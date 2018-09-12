@@ -15,3 +15,4 @@ user = $kasutaja
 password = $parool
 host = localhost" > /home/$kasutaja/.my.cnf
 chmod 0600 /home/$kasutaja/.my.cnf
+chown -R $kasutaja:user /home/$kasutaja/
