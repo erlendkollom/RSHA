@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Php paigaldusskrip
+
+MYSQL=$(dpkg-query -W -f='${Status}' apache2 2>/dev/null | grep -c "ok installed")
+
+if [ $MYSQL -eq 0 ]; then
+
+echo "Paigaladame MySql-i"
+apt-get install -y apt-get install mysql-server
+elif [ $MYSQL -eq 1 ]; then
+echo "MySql on paigaldatud!"
+fi
